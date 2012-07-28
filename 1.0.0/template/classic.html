@@ -1,0 +1,63 @@
+<div>	
+	<div class="setting connect" style="display: none; text-align:center">
+		<img src="http://hootsuite.weisuite.com/static/weisuite/1.01/img/instagram_72x72.png">
+		<div>
+			<a>Connect with Instagram</a>
+		</div>
+	</div>	
+	<div class="entry">
+		<div class="toolbar empty"></div>
+		<a class="avatar" data-name="avatar"></a>
+		<a class="title"  data-name="title"></a>
+		<a class="timestamp"  data-name="timestamp"></a>
+		<a class="thumbnail"  data-name="thumbnail"></a>
+		<div class="wsml"  data-name="wsml"></div>
+		<div class="attachments"></div>
+		<div class="conversations">
+			<!-- http://www.charbase.com/2617-unicode-black-shogi-piece -->
+			<span class="arrow unselectable">&#9751;</span>				
+			<div class="toolbar empty"></div>
+			<div class="entries"></div>
+		</div>
+		<!-- add an empty div to ensure the parent div occupy the space of floating 
+			block -->
+		<div style="clear: both; "></div>				
+	</div>	
+	<!-- it's important to put after the entry as the entry will be retrieved first with selector div.entry -->
+	<div class="entry comment">
+		<a class="avatar"  data-name="avatar"></a>
+		<div class="wsml"  data-name="wsml"></div>
+		<a class="timestamp"  data-name="timestamp"></a>
+        <div style="clear: both;"></div>
+    </div>	
+	<div class="entry like">
+		<a class="avatar"  data-name="avatar"></a>
+		<div class="wsml"  data-name="wsml"></div>
+		<a class="timestamp"  data-name="timestamp"></a>  
+		<div style="clear: both;"></div>
+	</div>    	
+	<!-- it's important to put after the entry comment as the entry will be retrieved first with selector div.entry -->
+	<div class="entry comment textbox">
+		<textarea></textarea>
+		<div class="label">Add a comment...</div>
+		<div class="toolbar empty"></div>
+	</div>		
+	<div class="stream">
+		<div class="topbar">
+			<div class="header">
+				<a class="image">
+					<img style="display: none;">
+				</a>
+				<div>
+					<span class="title"></span> 
+					<span class="subtitle"></span>
+				</div>
+				<div class="toolbar empty"></div>
+			</div>
+			<!-- DROPDOWNS -->
+			<div class="dropdowns" style="display: none;"></div>
+		</div>
+		<div class="entries"></div>
+		<div class="bottombar"></div>
+	</div>
+</div>

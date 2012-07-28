@@ -1,0 +1,104 @@
+{
+  "topbar": {
+    "header": {
+      "icon": "",
+      "title": "",
+      "subtitle": "",
+      "toolbar": {
+        "buttons": {
+          "home": {
+            "title": "Home",
+            "classes": [
+              "home-grey-20x20"
+            ]
+          },
+          "setting": {
+            "title": "Setting",
+            "classes": [
+              "setting19x19"
+            ]
+          },    
+          "more": {
+            "title": "More",
+            "classes": [
+              "dropdown19x19"
+            ]
+          }                
+        }
+      }
+    },
+    "dropdowns": {
+      "more": {
+        "classes": [
+          "setting",
+          "more"
+        ],
+        "menus": {
+          "help": {
+            "text": "Help",
+            "title": "Help",
+            "href": "http://help.hootsuite.com/forums/21042062-instagram-app-faqs"
+          },
+          "feedback": {
+            "text": "Feedback",
+            "title": "Feedback",
+            "href": "http://feedback.hootsuite.com/forums/167337-hootsuite-app-instagram"
+          },
+          "developer": {
+            "text": "Developer",
+            "title": "Developer",
+            "href": "http://www.weisuite.com?source=instagram"
+          }
+        }
+      },
+      "setting": {
+        "classes": [
+          "setting",
+          "connect"
+        ],
+        "html": "<img src='http://hootsuite.weisuite.com/static/weisuite/1.01/img/instagram_72x72.png' style='padding:30px'><div class='toolbar' style='margin-bottom:20px'><a data-name='connect' class='button unselectable'><span class='blue'>Connect with Instagram</span></a></div>"
+      }
+    }
+  },
+  "entries": {
+    "entry": {
+      "toolbar": {
+        "buttons": {
+          "share": {
+            "title": "Share",
+            "classes": [
+              "reply19x19"
+            ]
+          },
+          "like": {
+            "title": "Like/Unlike",
+            "classes": [
+              "heart-grey-20x20"
+            ]
+          }
+        }
+      },
+      "conversations": {
+        "comment": {
+        	"textbox":{
+        		"toolbar":{
+        			"buttons":{
+        				"cancel":{
+        					"title":"Cancel",
+        					"text":"Cancel",
+        					"classes":["brown"]
+        				},
+        				"add":{
+        					"title":"Add",
+        					"text":"Add",
+        					"classes":["blue"]        				
+        				}
+        			}
+        		}
+        	}
+        },
+        "like": {}
+      }
+    }
+  }
+}
