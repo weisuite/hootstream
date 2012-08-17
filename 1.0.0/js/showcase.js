@@ -1,9 +1,9 @@
 function onModuleLoad(module){
    var json='{}';
-   $.ajax('GET','template/classic.json',function(req,element,widget,event,detail){
+   $.ajax('GET','template/classic.json',{},function(req,element,widget,event,detail){
 	    json=req.responseText;
 	  },null,false);
-	$.ajax('GET','template/classic.html',function(req){
+	$.ajax('GET','template/classic.html',{},function(req){
 		var template=document.createElement('div');
 		template.innerHTML=req.responseText;		
 		var model=JSON.parse(json);
@@ -16,7 +16,12 @@ function onModuleLoad(module){
               'avatar':'http://images.instagram.com/profiles/profile_46583556_75sq_1340696801.jpg',              
               'content':'Our VP of Product Marketing, @jd_peterson shows you how to build a strong self service customer community! http://ow.ly/bQNj8 #CMGR'
             };
-	    $.onScroll(stream); 
+	    window.addEventListener("scroll", function(event){
+	    	$.onScroll(stream,event);
+	    }, false); 
+	    window.addEventListener("resize", function(event){
+	    	$.onScroll(stream,event);
+	    }, false); 	    
 	    stream.onEvent('stream.topbar.dropdowns.setting.connect', function(d,e,w,evt){
 	      $.popup('http://www.yahoo.com','_blank',{},function(d$,e$,w$,evt$){
 	        window.alert('popup is closed');
@@ -24,7 +29,8 @@ function onModuleLoad(module){
 	    });	       
 	    stream.onEvent('stream.append', function(d,e,w,evt){
 	      var entry=$.createEntry(template.query$1('div.entry').clone$1(true),'entry',data,stream.entries,model.entries.entry);
-	      stream.entries.add$1(entry);      
+	      stream.entries.add$1(entry); 
+	      $.onScroll(stream);  
 	    });
 	    stream.onEvent('stream.topbar.header.toolbar.home',function(d,e,w,evt,detail){
 	    	  stream.entries.clear$1('home');
@@ -34,6 +40,7 @@ function onModuleLoad(module){
 		      stream.entries.add$1(entry2);    	    	
 		      entry2.conversations.toolbar.add$1($.createButton('comments', null,{'text':'2 comments'}));
 		      entry2.conversations.toolbar.add$1($.createButton('likes', null,{'text':'2 likes'}));
+		      $.onScroll(stream); 
 		      entry2.onEvent('entry.conversations.toolbar.comments', function(d,e,w,evt){
 		        entry2.conversations.setSelected$1('comments');
 		        entry2.conversations.entries.clear$0();
