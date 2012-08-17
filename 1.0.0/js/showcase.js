@@ -1,9 +1,9 @@
 function onModuleLoad(module){
    var json='{}';
-   $.ajax('GET','template/classic.json',{},function(req,element,widget,event,detail){
+   $.ajax('template/classic.json',{'method':'GET'},function(req,element,widget,event,detail){
 	    json=req.responseText;
 	  },null,false);
-	$.ajax('GET','template/classic.html',{},function(req){
+	$.ajax('template/classic.html',{'method':'GET'},function(req){
 		var template=document.createElement('div');
 		template.innerHTML=req.responseText;		
 		var model=JSON.parse(json);
@@ -101,6 +101,6 @@ function onModuleLoad(module){
 	      window.alert('js callback:'+JSON.stringify(detail));
 	    });                     
 	    
-	    $.click($.query('.stream .topbar .header .toolbar a[data-name=home]'));
+	    $.query('.stream .topbar .header .toolbar a[data-name=home]').click();
 	});	
 }
