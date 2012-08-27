@@ -35,7 +35,12 @@ function onModuleLoad(module){
 	    stream.onEvent('stream.topbar.header.toolbar.home',function(d,e,w,evt,detail){
 	    	  stream.entries.clear$1('home');
 		      var entry=$.createEntry(template.query$1('div.entry').clone$1(true),'entry',data,stream.entries,model.entries.entry);
-		      stream.entries.add$1(entry);      	    	
+		      stream.entries.add$1(entry);    
+		      var subentries=$.createEntries(template.query$1('div.entries').clone$1(true), 'entries', stream, model.entries);
+		      var subentry=$.createEntry(template.query$1('div.entry').clone$1(true),'entry',data,stream.entries,model.entries.entry);      
+		      subentries.add$1(subentry);
+		      subentries.classes().add$1('entry');
+		      stream.entries.add$1(subentries);		        	    	
 		      var entry2=$.createEntry(template.query$1('div.entry').clone$1(true),'entry',data,stream.entries,model.entries.entry);
 		      stream.entries.add$1(entry2);    	    	
 		      entry2.conversations.toolbar.add$1($.createButton('comments', null,{'text':'2 comments'}));
